@@ -10,6 +10,9 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     chmod 600 .travis/development
     mv .travis/development ~/.ssh/id_rsa
 
+    echo -e "Host 142.54.227.126\n\tStrictHostKeyChecking no" >> ~/.ssh/config
+    echo -e "Host 52.200.159.125\n\tStrictHostKeyChecking no" >> ~/.ssh/config
+
     # eval "$(ssh-agent -s)"
     # ssh-add ~/.ssh/deploy-key        
     # chmod 600 ~/.ssh/deploy-key 
