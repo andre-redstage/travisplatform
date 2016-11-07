@@ -12,7 +12,7 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
 
     #touch ~/.ssh/config
 
-    #cat /home/travis/.ssh/config
+    cat /home/travis/.ssh/config
     #echo -e "Host 142.54.227.126\n\tStrictHostKeyChecking no" >> /home/travis/.ssh/config
     #echo -e "Host 52.200.159.125\n\tStrictHostKeyChecking no" >> /home/travis/.ssh/config
 
