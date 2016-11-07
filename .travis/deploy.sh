@@ -23,9 +23,12 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     git config user.name "Travis CI"
     git config user.email "travis@test.com"
 
-    # Used for server, such as ZeroLag.
-    git remote add deploy "ssh://uat.travisplatform@dev03.redstage.cl.zerolag.com//www/sites/uat.travisplatform/files/git"    
+    git remote add deploy "ssh://travis@104.236.118.124//var/www/repotest/repotest.git"
     git push -f deploy master
+
+    # Used for server, such as ZeroLag.
+    #git remote add deploy "ssh://uat.travisplatform@dev03.redstage.cl.zerolag.com//www/sites/uat.travisplatform/files/git"    
+    #git push -f deploy master
     # --
 
     # Used for Platform.sh

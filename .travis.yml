@@ -6,6 +6,7 @@ php:
 before_script:
 - echo -e "Host 142.54.227.126\n\tStrictHostKeyChecking no" > /home/travis/.ssh/config
 - echo -e "Host 52.200.159.125\n\tStrictHostKeyChecking no" >> /home/travis/.ssh/config
+- echo -e "Host 104.236.118.124\n\tStrictHostKeyChecking no" >> ~/.ssh/config
 
 after_success:
 - bash .travis/deploy.sh
