@@ -16,8 +16,8 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     #echo -e "Host 142.54.227.126\n\tStrictHostKeyChecking no" >> /home/travis/.ssh/config
     #echo -e "Host 52.200.159.125\n\tStrictHostKeyChecking no" >> /home/travis/.ssh/config
 
-    ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no uat.travisplatform@142.54.227.126
-    ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no hjec3fcqxqntw@52.200.159.125
+    #ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no uat.travisplatform@142.54.227.126
+    #ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no hjec3fcqxqntw@52.200.159.125
 
     # eval "$(ssh-agent -s)"
     # ssh-add ~/.ssh/deploy-key        
