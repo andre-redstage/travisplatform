@@ -1,3 +1,4 @@
+
 Capfile
 /config
 /magmi
@@ -34,3 +35,4 @@ php.ini
 tmp.php
 
 REVISION
+.travis/development
