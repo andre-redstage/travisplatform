@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/usr/bin/expect
 
 # print outputs and exit on first failure
 set -xe
 
 set prompt "#|>|\\\$"
 
-expect {
-    "(yes/no)" { send "yes\r";exp_continue}
-}
+
 
 if [ $TRAVIS_BRANCH == "master" ] ; then    
     
@@ -41,12 +39,18 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     # Used for server, such as ZeroLag.
     git remote add deploy "ssh://uat.travisplatform@dev03.redstage.cl.zerolag.com//www/sites/uat.travisplatform/files/git"    
     git push -f deploy master
+    expect {
+        "(yes/no)" { send "yes\r";exp_continue}
+    }
     expect -re $prompt
     # --
 
     # Used for Platform.sh
     git remote add platform "hjec3fcqxqntw@git.us.magento.cloud:hjec3fcqxqntw.git"
     git push -f platform master
+        expect {
+        "(yes/no)" { send "yes\r";exp_continue}
+    }
     expect -re $prompt
     # --
 else
