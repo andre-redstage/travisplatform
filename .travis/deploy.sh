@@ -1,11 +1,7 @@
-#!/usr/bin/expect
+#!/bin/bash
 
 # print outputs and exit on first failure
 set -xe
-
-set prompt "#|>|\\\$"
-
-
 
 if [ $TRAVIS_BRANCH == "master" ] ; then    
     
@@ -15,9 +11,6 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     mv .travis/development ~/.ssh/id_rsa
 
     #touch ~/.ssh/config
-
-    touch ~/.ssh/known_hosts
-    chmod 777 ~/.ssh/known_hosts
 
     cat /home/travis/.ssh/config
     #echo -e "Host 142.54.227.126\n\tStrictHostKeyChecking no" >> /home/travis/.ssh/config
@@ -39,19 +32,11 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     # Used for server, such as ZeroLag.
     git remote add deploy "ssh://uat.travisplatform@dev03.redstage.cl.zerolag.com//www/sites/uat.travisplatform/files/git"    
     git push -f deploy master
-    expect {
-        "(yes/no)" { send "yes\r";exp_continue}
-    }
-    expect -re $prompt
     # --
 
     # Used for Platform.sh
     git remote add platform "hjec3fcqxqntw@git.us.magento.cloud:hjec3fcqxqntw.git"
     git push -f platform master
-        expect {
-        "(yes/no)" { send "yes\r";exp_continue}
-    }
-    expect -re $prompt
     # --
 else
 
