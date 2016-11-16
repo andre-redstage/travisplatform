@@ -8,7 +8,8 @@ mv .travis/development ~/.ssh/id_rsa
 git config user.name "Travis CI"
 git config user.email "travis@test.com"
 
-if [ $TRAVIS_BRANCH == "master" ] ; then
+if [ $TRAVIS_BRANCH == "master" ]
+then
 
     #Using Zerolag as production
     git remote add deploy $PRODUCTION_REMOTE
