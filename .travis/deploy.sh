@@ -8,13 +8,14 @@ mv .travis/development ~/.ssh/id_rsa
 git config user.name "Travis CI"
 git config user.email "travis@test.com"
 
-if [$TRAVIS_BRANCH  == "master" ] ; then    
+if [ $TRAVIS_BRANCH == "master" ]
+then
 
     #Using Zerolag as production
-    git remote add deploy "ssh://uat.travisplatform@dev03.redstage.cl.zerolag.com//www/sites/uat.travisplatform/files/git"    
+    git remote add deploy $PRODUCTION_REMOTE
     git push -f deploy $TRAVIS_BRANCH    
 
 fi
 
-git remote add platform "hjec3fcqxqntw@git.us.magento.cloud:hjec3fcqxqntw.git"
+git remote add platform $PLATFORM_REMOTE
 git push -f platform $TRAVIS_BRANCH
