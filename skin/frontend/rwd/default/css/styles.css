@@ -3183,7 +3183,8 @@ body {
  * ============================================ */
 .header-language-background {
   padding: 10px;
-  background-color: #3399cc;
+  background-color: #81878a;
+
   text-transform: uppercase;
 }
 .header-language-background .header-language-container {
