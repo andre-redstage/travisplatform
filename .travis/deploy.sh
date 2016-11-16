@@ -1,11 +1,14 @@
 #!/bin/bash
 
 openssl aes-256-cbc -K $encrypted_790cf80679f9_key -iv $encrypted_790cf80679f9_iv -in .travis/development.enc -out .travis/development -d
-    
+
+set -xe
+
 chmod 600 .travis/development
 mv .travis/development ~/.ssh/id_rsa
 
 echo $TRAVIS_REPO_SLUG
+echo $TRAVIS_PULL_REQUEST
 
 git config user.name "Travis CI"
 git config user.email "travis@test.com"
