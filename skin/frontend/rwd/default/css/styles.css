@@ -3150,7 +3150,7 @@ body {
   min-width: 320px;
   min-height: 100%;
   margin: 0 auto;
-  background: #FFFFFF;
+  background: #e1ffc0;
 }
 
 .wrapper:after {
@@ -3183,8 +3183,7 @@ body {
  * ============================================ */
 .header-language-background {
   padding: 10px;
-  background-color: #81878a;
-
+  background-color: #3f5865;
   text-transform: uppercase;
 }
 .header-language-background .header-language-container {
