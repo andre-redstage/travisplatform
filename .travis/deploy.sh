@@ -4,7 +4,9 @@
 if [ $TRAVIS_PULL_REQUEST == "false" ]
 then
 
-	openssl aes-256-cbc -K $encrypted_790cf80679f9_key -iv $encrypted_790cf80679f9_iv -in .travis/development.enc -out .travis/development -d
+	#openssl aes-256-cbc -K $encrypted_790cf80679f9_key -iv $encrypted_790cf80679f9_iv -in .travis/development.enc -out .travis/development -d
+
+	openssl aes-256-cbc -k "$SECRET_FILE_PASS" -in .travis/development_test.enc -out development -d
 
 	set -xe
 
@@ -16,8 +18,7 @@ then
 
 	if [ $TRAVIS_BRANCH == "master" ]
 	then
-
-	    #Using Zerolag as production
+	    
 	    git remote add deploy $PRODUCTION_REMOTE
 	    git push -f deploy $TRAVIS_BRANCH    
 
