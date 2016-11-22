@@ -6,7 +6,7 @@ then
 
 	#openssl aes-256-cbc -K $encrypted_790cf80679f9_key -iv $encrypted_790cf80679f9_iv -in .travis/development.enc -out .travis/development -d
 
-	openssl aes-256-cbc -k "$SECRET_FILE_PASS" -in .travis/development_test.enc -out development -d
+	openssl aes-256-cbc -k "$SECRET_FILE_PASS" -in .travis/development_test.enc -out .travis/development -d
 
 	set -xe
 
