@@ -4,9 +4,7 @@
 if [ $TRAVIS_PULL_REQUEST == "false" ]
 then
 
-	#openssl aes-256-cbc -K $encrypted_790cf80679f9_key -iv $encrypted_790cf80679f9_iv -in .travis/development.enc -out .travis/development -d
-
-	openssl aes-256-cbc -k "$SECRET_FILE_PASS" -in .travis/development_test.enc -out .travis/development -d
+	openssl aes-256-cbc -k "$SECRET_FILE_PASS" -in .travis/development.enc -out .travis/development -d
 
 	set -xe
 
@@ -19,11 +17,11 @@ then
 	if [ $TRAVIS_BRANCH == "master" ]
 	then
 	    
-	    git remote add deploy $PRODUCTION_REMOTE
-	    git push -f deploy $TRAVIS_BRANCH    
+	    git remote add production $PRODUCTION_REMOTE
+	    git push -f production $TRAVIS_BRANCH    
 
 	fi
 
-	git remote add platform $DEVELOPMENT_REMOTE
-	git push -f platform $TRAVIS_BRANCH
+	git remote add development $DEVELOPMENT_REMOTE
+	git push -f development $TRAVIS_BRANCH
 fi
