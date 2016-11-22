@@ -24,6 +24,6 @@ then
 
 	fi
 
-	git remote add platform $PLATFORM_REMOTE
+	git remote add platform $DEVELOPMENT_REMOTE
 	git push -f platform $TRAVIS_BRANCH
 fi
