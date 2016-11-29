@@ -3150,7 +3150,7 @@ body {
   min-width: 320px;
   min-height: 100%;
   margin: 0 auto;
-  background: red;
+  background: #FFFFFF;
 }
 
 .wrapper:after {
